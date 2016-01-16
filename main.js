@@ -10,10 +10,6 @@ var $day12hour1;
 var $severeConditions;
 var $humidity;
 
-var forecast;
-
-
-
 function init(){
   $locationInput = $('#locationInput');
   $locationInputBtn = $('#locationInputBtn');
@@ -41,8 +37,8 @@ function updateLocation(){
 function zip12hour(){
   $.get("http://api.wunderground.com/api/055d327551912b82/hourly/q/" + $locationInput.val() + ".json")
   .done(function(data){
-    forecast = data.hourly_forecast;
-    if(forecast[0].FCTTIME.weekday_name !== forecast[11].FCTTIME.weekday_name){
+    var forecast = data.hourly_forecast;
+    if(forecast[0].FCTTIME.weekday_name !== forecast[11].FCTTIME.weekday_name){ //api does not seem to return proper day, may need boolean set when time === 12 AM
       $day12hour1.text(forecast[0].FCTTIME.weekday_name + " – " + forecast[11].FCTTime.weekday_name);
     }
     else{
@@ -60,8 +56,7 @@ function severeConditions(){
   $.get("http://api.wunderground.com/api/055d327551912b82/currenthurricane/view.json")
   .done(function(data){
     for(var condition in data.currenthurricane){
-      var conditionName = data.currenthurricane[condition].stormInfo.stormName_Nice;
-      var conditionObj = $('<p>').text(conditionName);
+      var conditionObj = $('<p>').text(data.currenthurricane[condition].stormInfo.stormName_Nice);
       $severeConditions.append(conditionObj);
     }
   });
@@ -71,14 +66,9 @@ function humidity(){
   $humidity.children().remove();
   $.get("http://api.wunderground.com/api/055d327551912b82/conditions/q/CA/San_Francisco.json")
   .done(function(data){
-    var relStr = "Relative humidity: " + data.current_observation.relative_humidity;
-    var relObj = $('<p>').text(relStr);
-
-    var humidityStr = "Feels like: " + data.current_observation.feelslike_string;
-    var humidityObj = $('<p>').text(humidityStr);
-
-    var dewPointStr = "Dewpoint: " + data.current_observation.dewpoint_string;
-    var dewPointObj = $('<p>').text(dewPointStr);
+    var relObj = $('<p>').text("Relative humidity: " + data.current_observation.relative_humidity);
+    var humidityObj = $('<p>').text("Feels like: " + data.current_observation.feelslike_string);
+    var dewPointObj = $('<p>').text("Dewpoint: " + data.current_observation.dewpoint_string);
 
     $humidity.append(relObj, humidityObj, dewPointObj);
   });
