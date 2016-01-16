@@ -11,11 +11,19 @@
 
 body {
   text-align: center;
+  background-image: url("cloudsTile.jpg");
+  z-index: 1;
+  font-weight: bold;
+}
+
+body * {
+  z-index: 20;
 }
 
 input:focus, input:active{
   outline: 0px;
 }
+
 
 .divBtn {
   border-radius: 16px;
@@ -23,8 +31,37 @@ input:focus, input:active{
   display: inline-block;
   padding: 2px 6px 2px 6px;
   cursor: pointer;
+  background-color: white;
 }
 
 .divBtn:active {
   background-color: lightgrey;
+}
+
+tr, th {
+  text-align: center;
+}
+
+#day12hour1, #severeHeader {
+  margin-top: 18px;
+  font-size: 24px;
+  margin-bottom: 16px;
+  min-width: 412px;
+}
+
+#times12hour{
+  min-width: 412px;
+}
+
+#inputContainer {
+  min-width: 824px;
+  margin-top: 24px;
+}
+
+td, th, p {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+#col12hour {
+  background-color: none;
 }

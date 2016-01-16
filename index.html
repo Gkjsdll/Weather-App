@@ -3,13 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <title>Weather API Test</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- &#176 degree symbol -->
+  <div id="inputContainer">
+    <input id="locationInput" type="text" placeholder="Enter zip code..."> <div id="locationInputBtn" class="no-select divBtn">Update Location</div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <p id="day12hour1" class='col-xs-5 col-xs-offset-1'>Hourly Weather</p> <!--set col width in jquery based on midnight -->
+      <p id="severeHeader" class='col-xs-5 col-xs-offset-1'>Severe Conditions</p>
+    </div>
+    <table id="forecast12hour" class="col-xs-5 col-xs-offset-1">
+      <colgroup id="col12hour">
+        <col class="col-xs-1">
+        <col class="col-xs-1">
+        <col class="col-xs-1">
+        <col class="col-xs-1">
+        <col class="col-xs-1">
+        <col class="col-xs-1">
+        <col class="col-xs-1">
+        <col class="col-xs-1">
+        <col class="col-xs-1">
+        <col class="col-xs-1">
+        <col class="col-xs-1">
+        <col class="col-xs-1">
+      </colgroup>
+      <tr id="times12hour">
+        <th>Hour 1</th>
+        <th>Hour 2</th>
+        <th>Hour 3</th>
+        <th>Hour 4</th>
+        <th>Hour 5</th>
+        <th>Hour 6</th>
+        <th>Hour 7</th>
+        <th>Hour 8</th>
+        <th>Hour 9</th>
+        <th>Hour 10</th>
+        <th>Hour 11</th>
+        <th>Hour 12</th>
+      </tr>
+      <tr id="temps12hour">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <ul id="severeConditions"></ul>
+  </div>
 
-  <input id="locationInput" placeholder="City, State or Zip"> <div id="locationInputBtn" class="no-select divBtn">Update Location</div>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
