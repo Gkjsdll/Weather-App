@@ -14,53 +14,59 @@
   <div class="container-fluid">
     <div class="row">
       <p id="day12hour1" class='col-xs-5 col-xs-offset-1'>Hourly Weather</p> <!--set col width in jquery based on midnight -->
-      <p id="severeHeader" class='col-xs-5 col-xs-offset-1'>Severe Conditions</p>
+      <p id="humidityHeader" class='col-xs-5'>Humidity</p>
     </div>
-    <table id="forecast12hour" class="col-xs-5 col-xs-offset-1">
-      <colgroup id="col12hour">
-        <col class="col-xs-1">
-        <col class="col-xs-1">
-        <col class="col-xs-1">
-        <col class="col-xs-1">
-        <col class="col-xs-1">
-        <col class="col-xs-1">
-        <col class="col-xs-1">
-        <col class="col-xs-1">
-        <col class="col-xs-1">
-        <col class="col-xs-1">
-        <col class="col-xs-1">
-        <col class="col-xs-1">
-      </colgroup>
-      <tr id="times12hour">
-        <th>Hour 1</th>
-        <th>Hour 2</th>
-        <th>Hour 3</th>
-        <th>Hour 4</th>
-        <th>Hour 5</th>
-        <th>Hour 6</th>
-        <th>Hour 7</th>
-        <th>Hour 8</th>
-        <th>Hour 9</th>
-        <th>Hour 10</th>
-        <th>Hour 11</th>
-        <th>Hour 12</th>
-      </tr>
-      <tr id="temps12hour">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
-    <ul id="severeConditions"></ul>
+    <div class="row">
+      <table id="forecast12hour" class="col-xs-5 col-xs-offset-1">
+        <colgroup id="col12hour">
+          <col class="col-xs-1">
+          <col class="col-xs-1">
+          <col class="col-xs-1">
+          <col class="col-xs-1">
+          <col class="col-xs-1">
+          <col class="col-xs-1">
+          <col class="col-xs-1">
+          <col class="col-xs-1">
+          <col class="col-xs-1">
+          <col class="col-xs-1">
+          <col class="col-xs-1">
+          <col class="col-xs-1">
+        </colgroup>
+        <tr id="times12hour">
+          <th>Hour 1</th>
+          <th>Hour 2</th>
+          <th>Hour 3</th>
+          <th>Hour 4</th>
+          <th>Hour 5</th>
+          <th>Hour 6</th>
+          <th>Hour 7</th>
+          <th>Hour 8</th>
+          <th>Hour 9</th>
+          <th>Hour 10</th>
+          <th>Hour 11</th>
+          <th>Hour 12</th>
+        </tr>
+        <tr id="temps12hour">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <div id="humidity" class="col-xs-5"></div>
+    </div>
+    <div class="row">
+      <p id="severeHeader" class="col-xs-10 col-xs-offset-1">Current Hurricanes:</p>
+      <div id="severeConditions" class="col-xs-10 col-xs-offset-1"></div>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
