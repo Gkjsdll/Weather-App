@@ -1,0 +1,27 @@
+.no-select {
+  /*Prevents the user from selecting text*/
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default; }
+
+body {
+  text-align: center; }
+
+input:focus, input:active {
+  outline: 0px; }
+
+.divBtn {
+  border-radius: 16px;
+  border: 1px solid lightgrey;
+  display: inline-block;
+  padding: 2px 6px 2px 6px;
+  cursor: pointer; }
+
+.divBtn:active {
+  background-color: lightgrey; }
+
+/*# sourceMappingURL=style.css.map */
